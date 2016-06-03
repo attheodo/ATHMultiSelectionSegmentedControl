@@ -1,0 +1,16 @@
+PODS:
+  - ATHMultiSelectionSegmentedControl (0.1.0)
+
+DEPENDENCIES:
+  - ATHMultiSelectionSegmentedControl (from `../`)
+
+EXTERNAL SOURCES:
+  ATHMultiSelectionSegmentedControl:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ATHMultiSelectionSegmentedControl: dd45379ca3c9c93d918a713f52e1cd8abcd8d3c6
+
+PODFILE CHECKSUM: ec4b6789583ae9ec2f3d771540cc6ece8cfcdddf
+
+COCOAPODS: 1.0.0
