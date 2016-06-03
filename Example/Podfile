@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ATHMultiSelectionSegmentedControl_Example' do
+  pod 'ATHMultiSelectionSegmentedControl', :path => '../'
+
+  target 'ATHMultiSelectionSegmentedControl_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
