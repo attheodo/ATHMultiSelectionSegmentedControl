@@ -9,10 +9,13 @@
 import Foundation
 import UIKit
 
+import QuartzCore
+
 internal class ATHMultiSelectionControlSegmentButton: UIButton {
     
     // MARK: - Private Properties
     private var _isButtonSelected: Bool = false
+    private var _border: CALayer!
     
     // MARL: - Public Properties
     public var isButtonSelected: Bool {
@@ -20,13 +23,11 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     }
     
     // MARK: - Initialisers
-    public init() {
-        
-        super.init(frame: CGRectZero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         _configureButton()
-        
     }
-    
+       
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -34,20 +35,24 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     // MARK: - Private Methods
     private func _configureButton() {
 
-        backgroundColor = UIColor.clearColor()
-        
         setTitleColor(tintColor, forState: .Normal)
         
-        layer.borderWidth = 0.5
-        layer.borderColor = tintColor.CGColor
-        
         showsTouchWhenHighlighted = true
-
+        backgroundColor = UIColor.clearColor()
+        
+        _border = CALayer()
+        _border.frame = CGRectMake(self.frame.size.width - 1 , 0, 1.0, self.frame.size.height)
+        _border.backgroundColor = tintColor.CGColor
+        
+        self.layer.addSublayer(_border)
+        
     }
     
     private func _setSelectedState() {
         
         backgroundColor = tintColor
+        _border.backgroundColor = superview?.superview?.backgroundColor?.CGColor
+        
         setTitleColor(UIColor.whiteColor(), forState: .Normal)
         
     }
@@ -55,7 +60,9 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     private func _setUnselectedState() {
         
         backgroundColor = UIColor.clearColor()
-        setTitleColor(tintColor, forState: .Normal)
+        _border.backgroundColor = tintColor.CGColor
+        
+        setTitleColor(UIColor.whiteColor(), forState: .Normal)
         
     }
     
