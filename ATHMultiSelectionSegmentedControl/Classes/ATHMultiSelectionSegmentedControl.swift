@@ -48,7 +48,7 @@ import UIKit
     }
     
     /**
-     
+     An array with the currently selected segment indices of the receiver.
     */
     public var selectedSegmentIndices: [Int] {
         
@@ -134,7 +134,7 @@ import UIKit
                 
                 button.tintColor = tintColor
                 button.backgroundColor = backgroundColor
-                button.addTarget(self, action: #selector(self._didTapSegment(_:)), forControlEvents: .TouchUpInside)
+                button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), forControlEvents: .TouchUpInside)
                 
                 button.setTitle(segmentTitle, forState: .Normal)
                 
@@ -242,11 +242,18 @@ import UIKit
         
     }
     
+
+    
     /**
      Removes all segments of the receiver.
     */
     public func removeAllSegments() {
        
+        layer.borderWidth = 0
+
+        _segmentButtons?.forEach { segment in
+            segment.removeFromSuperview()
+        }
         _segmentButtons?.removeAll()
         _items?.removeAll()
     
@@ -263,7 +270,7 @@ import UIKit
     
     }
     
-    @objc private func _didTapSegment(segmentButton: ATHMultiSelectionControlSegmentButton) {
+    @objc private func _didTouchUpInsideSegment(segmentButton: ATHMultiSelectionControlSegmentButton) {
         
         guard let segmentButtons = _segmentButtons where segmentButtons.count > 0 else {
             return
