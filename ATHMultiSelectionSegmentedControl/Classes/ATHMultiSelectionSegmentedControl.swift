@@ -212,10 +212,11 @@ import UIKit
     }
     
     // MARK: Managing Segments
-    
     public func insertSegmentsWithTitles(titles: [String]) {
         
         _items = titles
+        _configureAppearance()
+        
         self.setNeedsLayout()
     
     }
@@ -239,10 +240,29 @@ import UIKit
      - parameter animated: `true` if the removal of the new segment should be animated, otherwise `false`.
     */
     public func removeSegmentAtIndex(_ segment: Int, animated animated: Bool) {
+       
+        guard var segments = _segmentButtons where segments.count > 0 && segment > 0 else {
+            return
+        }
         
+        var index = segment > segments.count - 1 ? segments.count - 1 : segment
+        
+        _items?.removeAtIndex(index)
+        
+        segments[index].removeFromSuperview()
+        segments.removeAtIndex(index)
+        
+        for (index, segment) in segments.enumerate() {
+           
+            let buttonWidth = frame.width / CGFloat(segments.count)
+            let buttonHeight = frame.height
+            
+            segments[index].frame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+        
+        }
+
     }
     
-
     
     /**
      Removes all segments of the receiver.
@@ -273,10 +293,6 @@ import UIKit
     @objc private func _didTouchUpInsideSegment(segmentButton: ATHMultiSelectionControlSegmentButton) {
         
         guard let segmentButtons = _segmentButtons where segmentButtons.count > 0 else {
-            return
-        }
-        
-        guard let segmentIndex = segmentButtons.indexOf(segmentButton) else {
             return
         }
         
