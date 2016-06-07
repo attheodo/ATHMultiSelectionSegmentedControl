@@ -62,7 +62,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         backgroundColor = UIColor.clearColor()
         _border.backgroundColor = tintColor.CGColor
         
-        setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        setTitleColor(tintColor, forState: .Normal)
         
     }
     
