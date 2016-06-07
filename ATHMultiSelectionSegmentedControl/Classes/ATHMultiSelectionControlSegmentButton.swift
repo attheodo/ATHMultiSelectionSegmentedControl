@@ -22,6 +22,26 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         return _isButtonSelected
     }
     
+    override var highlighted: Bool {
+       
+        didSet {
+        
+            if highlighted {
+                backgroundColor = tintColor.colorWithAlphaComponent(0.1)
+            } else {
+            
+                if _isButtonSelected {
+                    backgroundColor = tintColor
+                } else {
+                    backgroundColor = UIColor.clearColor()
+                }
+            
+            }
+        
+        }
+    }
+
+    
     // MARK: - Initialisers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +57,6 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
 
         setTitleColor(tintColor, forState: .Normal)
         
-        showsTouchWhenHighlighted = true
         backgroundColor = UIColor.clearColor()
         
         _border = CALayer()
@@ -47,6 +66,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         self.layer.addSublayer(_border)
         
     }
+    
     
     private func _setSelectedState() {
         
@@ -73,4 +93,5 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         _isButtonSelected ? _setSelectedState() : _setUnselectedState()
         
     }
+    
 }
