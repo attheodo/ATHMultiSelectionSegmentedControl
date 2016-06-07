@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D796BD31D05E7E900CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796BD11D05E7DD00CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		A53F309A2187DB05265656E2 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE27C310C56BC0DFF71997 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */; };
 		D26756647D44D0B1DE1DE373 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7351390CDE4FBC2EDA94FC30 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -31,6 +31,7 @@
 		11196A8CF97C486FC2B0D302 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2769D367A19A8F4D737DB23D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		43C2CCB3798B3012F2F61453 /* Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Example/Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		4D796BD11D05E7DD00CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATHMultiSelectionSegmentedControlTests.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATHMultiSelectionSegmentedControl_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATHMultiSelectionSegmentedControl_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7351390CDE4FBC2EDA94FC30 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATHMultiSelectionSegmentedControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5658542ECA984AAAED8BA8 /* Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A9BF265CAB9E2333FB668A2E /* ATHMultiSelectionSegmentedControl.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ATHMultiSelectionSegmentedControl.podspec; path = ../ATHMultiSelectionSegmentedControl.podspec; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				4D796BD11D05E7DD00CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				4D796BD31D05E7E900CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
