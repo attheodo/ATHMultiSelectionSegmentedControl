@@ -128,9 +128,10 @@ import UIKit
                 let buttonWidth = frame.width / CGFloat(items.count)
                 let buttonHeight = frame.height
                 
-                let button = ATHMultiSelectionControlSegmentButton()
+                let buttonFrame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+
+                let button = ATHMultiSelectionControlSegmentButton(frame: buttonFrame)
                 
-                button.frame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
                 button.tintColor = tintColor
                 button.backgroundColor = backgroundColor
                 button.addTarget(self, action: #selector(self._didTapSegment(_:)), forControlEvents: .TouchUpInside)
