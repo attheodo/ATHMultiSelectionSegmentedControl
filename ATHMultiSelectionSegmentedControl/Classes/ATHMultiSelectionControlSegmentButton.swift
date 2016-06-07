@@ -15,7 +15,6 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     
     // MARK: - Private Properties
     private var _isButtonSelected: Bool = false
-    private var _border: CALayer!
     
     // MARL: - Public Properties
     public var isButtonSelected: Bool {
@@ -59,11 +58,8 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         
         backgroundColor = UIColor.clearColor()
         
-        _border = CALayer()
-        _border.frame = CGRectMake(self.frame.size.width - 1 , 0, 1.0, self.frame.size.height)
-        _border.backgroundColor = tintColor.CGColor
-        
-        self.layer.addSublayer(_border)
+        layer.borderWidth = 0.5
+        layer.borderColor = tintColor.CGColor
         
     }
     
@@ -71,17 +67,13 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     private func _setSelectedState() {
         
         backgroundColor = tintColor
-        _border.backgroundColor = superview?.superview?.backgroundColor?.CGColor
-        
         setTitleColor(UIColor.whiteColor(), forState: .Normal)
         
     }
     
     private func _setUnselectedState() {
         
-        backgroundColor = UIColor.clearColor()
-        _border.backgroundColor = tintColor.CGColor
-        
+        backgroundColor = UIColor.clearColor()        
         setTitleColor(tintColor, forState: .Normal)
         
     }
