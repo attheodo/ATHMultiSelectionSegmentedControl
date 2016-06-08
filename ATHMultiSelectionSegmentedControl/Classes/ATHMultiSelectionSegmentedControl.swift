@@ -77,8 +77,8 @@ import UIKit
             }
             
             _deselectAllSegments()
-            
-            for index in selectedSegmentIndices {
+
+            for index in newValue {
                 segments[index].setButtonSelected(true)
             }
             
@@ -94,7 +94,7 @@ import UIKit
      - parameter items: An array of `String` objects with the segments titles
      - returns: An initialised `MultiSelectionSegmentedControl` object
     */
-    public init(items items: [String]?) {
+    public init(items: [String]?) {
         
         _items = items
         
@@ -156,13 +156,13 @@ import UIKit
      - parameter segment: An index number identifying a segment in the control. 
      It must be a number between 0 and the number of segments (numberOfSegments) minus 1; values exceeding this upper range are pinned to it.
     */
-    public func setTitle(_ title: String, forSegmentAtIndex segment: Int) {
+    public func setTitle(title: String, forSegmentAtIndex segment: Int) {
         
-        guard let segments = _segmentButtons where segments.count > 0 && segment > 0 else {
+        guard let segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
             return
         }
         
-        var index = segment > segments.count - 1 ? segments.count - 1 : segment
+        let index = segment > segments.count - 1 ? segments.count - 1 : segment
         
         segments[index].setTitle(title, forState: .Normal)
         
@@ -175,13 +175,13 @@ import UIKit
      minus 1; values exceeding this upper range are pinned to it.
      - returns: Returns the string (title) assigned to the receiver as content.
     */
-    public func titleForSegmentAtIndex(_ segment: Int) -> String? {
+    public func titleForSegmentAtIndex(segment: Int) -> String? {
        
-        guard let segments = _segmentButtons where segments.count > 0 && segment > 0 else {
+        guard let segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
             return nil
         }
         
-        var index = segment > segments.count - 1 ? segments.count - 1 : segment
+        let index = segment > segments.count - 1 ? segments.count - 1 : segment
         
         return segments[index].titleLabel?.text
         
@@ -195,7 +195,7 @@ import UIKit
      - parameter enabled: `true` to enable the specified segment or `false` to disable the segment.
      By default all segments are enabled
     */
-    public func setEnabled(_ enabled: Bool, forSegmentAtIndex segment: Int) {
+    public func setEnabled(enabled: Bool, forSegmentAtIndex segment: Int) {
         
     }
     
@@ -207,7 +207,7 @@ import UIKit
      
      - returns: `true` if the given segment is enabled and `false` if the segment is disabled. By default, segments are enabled.
     */
-    public func isEnabledForSegmentAtIndex(_ segment: Int) -> Bool {
+    public func isEnabledForSegmentAtIndex(segment: Int) -> Bool {
         return true
     }
     
@@ -228,13 +228,13 @@ import UIKit
      - parameter segment: An index number identifying a segment in the control. The new segment is inserted just before the designated one.
      - parameter animated: true if the insertion of the new segment should be animated, otherwise false.
     */
-    public func insertSegmentWithTitle(_ title: String, atIndex segment: Int, animated animated: Bool) {
+    public func insertSegmentWithTitle(title: String, atIndex segment: Int, animated: Bool) {
         
-        guard segment > 0 else {
+        guard segment >= 0 else {
             return
         }
         
-        var index = segment
+        let index = segment
         
         if _items == nil { _items = [] }
         if _segmentButtons == nil { _segmentButtons = [] }
@@ -286,14 +286,14 @@ import UIKit
      values exceeding this upper range are pinned to it.
      - parameter animated: `true` if the removal of the new segment should be animated, otherwise `false`.
     */
-    public func removeSegmentAtIndex(_ segment: Int, animated animated: Bool) {
+    public func removeSegmentAtIndex(segment: Int, animated: Bool) {
        
         guard var segments = _segmentButtons where segments.count > 0 && segment > 0 else {
             return
         }
         
         // if segment is out of range pin it
-        var index = segment > segments.count - 1 ? segments.count - 1 : segment
+        let index = segment > segments.count - 1 ? segments.count - 1 : segment
         
         _items?.removeAtIndex(index)
         
@@ -303,7 +303,7 @@ import UIKit
         let duration = animated ? 0.35 : 0
         
         UIView.animateWithDuration(duration) {
-            for (index, segment) in segments.enumerate() {
+            for (index, _) in segments.enumerate() {
                
                 let buttonWidth = self.frame.width / CGFloat(segments.count)
                 let buttonHeight = self.frame.height
