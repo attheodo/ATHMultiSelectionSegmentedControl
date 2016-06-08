@@ -1,8 +1,10 @@
 PODS:
   - ATHMultiSelectionSegmentedControl (0.1.0)
+  - Nimble (4.0.1)
 
 DEPENDENCIES:
   - ATHMultiSelectionSegmentedControl (from `../`)
+  - Nimble
 
 EXTERNAL SOURCES:
   ATHMultiSelectionSegmentedControl:
@@ -10,7 +12,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ATHMultiSelectionSegmentedControl: dd45379ca3c9c93d918a713f52e1cd8abcd8d3c6
+  Nimble: 0f3c8b8b084cda391209c3c5efbb48bedeeb920a
 
-PODFILE CHECKSUM: ec4b6789583ae9ec2f3d771540cc6ece8cfcdddf
+PODFILE CHECKSUM: 0f726248125018a5fd94c733c65f88c765b5fa80
 
 COCOAPODS: 1.0.0
