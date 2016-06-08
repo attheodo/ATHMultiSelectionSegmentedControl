@@ -17,7 +17,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     private var _isButtonSelected: Bool = false
     
     // MARL: - Public Properties
-    public var isButtonSelected: Bool {
+    internal var isButtonSelected: Bool {
         return _isButtonSelected
     }
     
@@ -79,7 +79,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     }
     
     // MARK: - Public Methods
-    public func setButtonSelected(isSelected: Bool) {
+    internal func setButtonSelected(isSelected: Bool) {
         
         _isButtonSelected = isSelected
         _isButtonSelected ? _setSelectedState() : _setUnselectedState()
