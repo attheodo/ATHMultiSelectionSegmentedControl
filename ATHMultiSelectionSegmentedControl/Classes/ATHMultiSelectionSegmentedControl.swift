@@ -225,10 +225,57 @@ import UIKit
      Inserts a segment at a specific position in the receiver and gives it a title as content.
      
      - parameter title: A string to use as the segment’s title.
-     - parameter segment: An index number identifying a segment in the control. The new segment is inserted just before the designated one
+     - parameter segment: An index number identifying a segment in the control. The new segment is inserted just before the designated one.
      - parameter animated: true if the insertion of the new segment should be animated, otherwise false.
     */
     public func insertSegmentWithTitle(_ title: String, atIndex segment: Int, animated animated: Bool) {
+        
+        guard segment > 0 else {
+            return
+        }
+        
+        var index = segment
+        
+        if _items == nil { _items = [] }
+        if _segmentButtons == nil { _segmentButtons = [] }
+
+        if index > _items!.count {
+            _items!.append(title)
+        } else {
+            _items!.insert(title, atIndex: index)
+        }
+        
+        let button = ATHMultiSelectionControlSegmentButton(frame: CGRectMake(self.frame.width, 0, 0, self.frame.height))
+       
+        button.tintColor = tintColor
+        button.backgroundColor = backgroundColor
+        button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), forControlEvents: .TouchUpInside)
+        
+        button.setTitle(title, forState: .Normal)
+        
+        addSubview(button)
+        
+        if index > _segmentButtons!.count {
+            _segmentButtons?.append(button)
+        } else {
+            _segmentButtons!.insert(button, atIndex: index)
+        }
+        
+        let duration = animated ? 0.35 : 0
+
+        UIView.animateWithDuration(duration) {
+
+            for (index, segment) in self._segmentButtons!.enumerate() {
+                
+                let buttonWidth = self.frame.width / CGFloat(self._items!.count)
+                let buttonHeight = self.frame.height
+                
+                let buttonFrame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+                segment.frame = buttonFrame
+                
+            }
+
+        }
         
     }
     
@@ -245,6 +292,7 @@ import UIKit
             return
         }
         
+        // if segment is out of range pin it
         var index = segment > segments.count - 1 ? segments.count - 1 : segment
         
         _items?.removeAtIndex(index)
@@ -252,17 +300,20 @@ import UIKit
         segments[index].removeFromSuperview()
         segments.removeAtIndex(index)
         
-        for (index, segment) in segments.enumerate() {
-           
-            let buttonWidth = frame.width / CGFloat(segments.count)
-            let buttonHeight = frame.height
-            
-            segments[index].frame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+        let duration = animated ? 0.35 : 0
         
+        UIView.animateWithDuration(duration) {
+            for (index, segment) in segments.enumerate() {
+               
+                let buttonWidth = self.frame.width / CGFloat(segments.count)
+                let buttonHeight = self.frame.height
+                
+                segments[index].frame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+            
+            }
         }
 
     }
-    
     
     /**
      Removes all segments of the receiver.
