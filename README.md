@@ -14,10 +14,10 @@
 
 ## API
 ```swift
-    import MultiSegmentedControl
+import ATHMultiSelectionSegmentedControl
 
 // initialize empty segmented control
-let segmentedControl = MultiSegmentedControl()
+let segmentedControl = ATHMultiSelectionSegmentedControl()
 
 // Add items to segmented control at once...
 segmentedControl.insertSegmentsWithTitles(["Segment 1", "Segment 2", "Segment 3"])
