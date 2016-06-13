@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'A control mimicking UISegmentedControl behaviour but allowing for multiple segment selection'
 
   s.description      = <<-DESC
-ATHMultiSelectionSegmentedControl is a UIView based control that mimicks UISegmentedControl's API but also allows for multiple segment selection. It's battle tested and fully testable. If you find any bugs or want to suggest improvements please feel free to contribute.'
+ATHMultiSelectionSegmentedControl is a UIView based control that mimicks UISegmentedControl's API but also allows for multiple segment selection. It's battle tested and fully tested. If you find any bugs or want to suggest improvements please feel free to contribute.'
                        DESC
 
   s.homepage         = 'https://github.com/attheodo/ATHMultiSelectionSegmentedControl'

@@ -5,11 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/ATHMultiSelectionSegmentedControl.svg?style=flat)](http://cocoapods.org/pods/ATHMultiSelectionSegmentedControl)
 [![Platform](https://img.shields.io/cocoapods/p/ATHMultiSelectionSegmentedControl.svg?style=flat)](http://cocoapods.org/pods/ATHMultiSelectionSegmentedControl)
 
+[![Logo](misc/logo.png  "ATHExtensions")](/)
+
+**ATHMultiSelectionSegmentedControl** is a `UIView` based control mimicking the API of `UISegmentedControl` but also allowing for multiple selection of segments. It's fully battle and unit-tested. If you find any bugs or want to suggest improvements please feel free to contribute.
+
+[![Demo](misc/demo.gif "ATHMultiSelectionSegmentedControl")](/)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -27,3 +31,7 @@ attheodo, at@atworks.gr
 ## License
 
 ATHMultiSelectionSegmentedControl is available under the MIT license. See the LICENSE file for more info.
+
+## Changelog
+- **v0.1.0**, *May 2016*
+    - Initial release
