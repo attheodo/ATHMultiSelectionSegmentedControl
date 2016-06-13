@@ -15,16 +15,24 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     
     // MARK: - Private Properties
     private var _isButtonSelected: Bool = false
+    private var _isButtonEnabled: Bool = true
     
     // MARL: - Public Properties
     internal var isButtonSelected: Bool {
         return _isButtonSelected
     }
     
+    internal var isButtonEnabled: Bool {
+        return _isButtonEnabled
+    }
+    
     override var highlighted: Bool {
        
         didSet {
         
+            // ignore highlighting if button is disabled
+            if !_isButtonEnabled { return }
+            
             if highlighted {
                 backgroundColor = tintColor.colorWithAlphaComponent(0.1)
             } else {
@@ -39,7 +47,6 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         
         }
     }
-
     
     // MARK: - Initialisers
     override init(frame: CGRect) {
@@ -83,6 +90,19 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         
         _isButtonSelected = isSelected
         _isButtonSelected ? _setSelectedState() : _setUnselectedState()
+        
+    }
+    
+    internal func setButtonEnabled(isEnabled: Bool) {
+
+        if isEnabled {
+            _setUnselectedState()
+        } else {
+            setTitleColor(UIColor.grayColor(), forState: .Normal)
+            backgroundColor = UIColor.clearColor()
+        }
+        
+        _isButtonEnabled = isEnabled
         
     }
     
