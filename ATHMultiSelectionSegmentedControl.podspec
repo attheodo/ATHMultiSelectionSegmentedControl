@@ -10,7 +10,7 @@ ATHMultiSelectionSegmentedControl is a UIView based control that mimicks UISegme
   s.homepage         = 'https://github.com/attheodo/ATHMultiSelectionSegmentedControl'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'attheodo' => 'at@atworks.gr' }
-  s.source           = { :git => 'git@github.com:attheodo/ATHMultiSelectionSegmentedControl.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/attheodo/ATHMultiSelectionSegmentedControl.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/attheodo'
 
   s.ios.deployment_target = '8.0'
