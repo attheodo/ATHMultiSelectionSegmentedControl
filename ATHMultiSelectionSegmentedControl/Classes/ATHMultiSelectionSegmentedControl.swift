@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+/**
+ MultiSelectionSegmentedControlDelegate delegate protocol.
+*/
+public protocol MultiSelectionSegmentedControlDelegate: class {
+    /// Gets called *ONLY* if the user interacts with the control and not
+    /// when the control is configured programatically
+    func multiSelectionSegmentedControl(control: MultiSelectionSegmentedControl, selectedIndices indices: [Int])
+}
+
 public class MultiSelectionSegmentedControl: UIView {
     
     // MARK: - Private Properties
@@ -16,6 +25,7 @@ public class MultiSelectionSegmentedControl: UIView {
     private var _items: [String]?
     
     // MARK: - Public Properties
+    public weak var delegate: MultiSelectionSegmentedControlDelegate?
     
     public var cornerRadius: CGFloat = 3 {
         didSet {
@@ -259,6 +269,10 @@ public class MultiSelectionSegmentedControl: UIView {
             return
         }
         
+        if numberOfSegments == 0 {
+            _configureAppearance()
+        }
+        
         let index = segment
         
         if _items == nil { _items = [] }
@@ -323,6 +337,7 @@ public class MultiSelectionSegmentedControl: UIView {
         _items!.removeAtIndex(index)
         
         segments[index].removeFromSuperview()
+        segments.removeAtIndex(index)
         _segmentButtons!.removeAtIndex(index)
         
         let duration = animated ? 0.35 : 0
@@ -336,6 +351,10 @@ public class MultiSelectionSegmentedControl: UIView {
                 segments[index].frame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
             
             }
+        }
+        
+        if segments.count == 0 {
+            layer.borderWidth = 0
         }
 
     }
@@ -391,6 +410,8 @@ public class MultiSelectionSegmentedControl: UIView {
         } else {
             segmentButton.setButtonSelected(true)
         }
+        
+        delegate?.multiSelectionSegmentedControl(self, selectedIndices: selectedSegmentIndices)
         
     }
     
