@@ -19,31 +19,78 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obj-Pt-Xyx" customClass="MultiSelectionSegmentedControl" customModule="ATHMultiSelectionSegmentedControl">
-                                <rect key="frame" x="40" y="65" width="520" height="36"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="102" width="560" height="36"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="hIV-em-L0B"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mOX-Rm-eV2">
-                                <rect key="frame" x="93" y="298" width="121" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATHMultiSelectionSegmentedControl:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVF-04-1CJ">
+                                <rect key="frame" x="20" y="70" width="264" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Indices: []" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CY-Gr-46O">
+                                <rect key="frame" x="20" y="158" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLJ-Mk-9xr">
+                                <rect key="frame" x="248" y="209" width="105" height="30"/>
+                                <state key="normal" title="Insert Segment"/>
+                                <connections>
+                                    <action selector="insertSegment:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TXy-hX-j2L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy6-My-upo">
+                                <rect key="frame" x="240" y="244" width="121" height="30"/>
+                                <state key="normal" title="Remove Segment"/>
+                                <connections>
+                                    <action selector="removeSegment:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ljW-Bv-rjm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmS-3t-pOq">
+                                <rect key="frame" x="226" y="279" width="149" height="30"/>
+                                <state key="normal" title="Remove All Segments">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeAllSegments:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mck-eC-brl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HmS-3t-pOq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="64s-Uc-4TC"/>
+                            <constraint firstItem="Obj-Pt-Xyx" firstAttribute="top" secondItem="XVF-04-1CJ" secondAttribute="bottom" constant="15" id="6v7-dG-e5S"/>
                             <constraint firstItem="Obj-Pt-Xyx" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="74Z-Ax-d43"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Obj-Pt-Xyx" secondAttribute="trailing" constant="20" id="779-BY-xG8"/>
+                            <constraint firstAttribute="trailing" secondItem="Obj-Pt-Xyx" secondAttribute="trailing" constant="20" id="779-BY-xG8"/>
+                            <constraint firstItem="6CY-Gr-46O" firstAttribute="top" secondItem="Obj-Pt-Xyx" secondAttribute="bottom" constant="20" id="7AA-Qp-ti0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XVF-04-1CJ" secondAttribute="leading" id="ByB-YF-1ff"/>
+                            <constraint firstItem="sy6-My-upo" firstAttribute="top" secondItem="LLJ-Mk-9xr" secondAttribute="bottom" constant="5" id="JEH-uq-CsT"/>
+                            <constraint firstItem="HmS-3t-pOq" firstAttribute="top" secondItem="sy6-My-upo" secondAttribute="bottom" constant="5" id="MoS-yl-ooV"/>
+                            <constraint firstItem="LLJ-Mk-9xr" firstAttribute="top" secondItem="6CY-Gr-46O" secondAttribute="bottom" constant="30" id="UQR-Nf-bRL"/>
+                            <constraint firstItem="LLJ-Mk-9xr" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="VaT-Vb-75i"/>
                             <constraint firstItem="Obj-Pt-Xyx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="45" id="gCu-ba-kXb"/>
-                            <constraint firstItem="Obj-Pt-Xyx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="moj-Nr-LQi"/>
+                            <constraint firstItem="XVF-04-1CJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="gOi-VX-znY"/>
+                            <constraint firstItem="sy6-My-upo" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="i41-WL-KBa"/>
+                            <constraint firstItem="Obj-Pt-Xyx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="moj-Nr-LQi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6CY-Gr-46O" secondAttribute="leading" id="tUd-ce-WuF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gCu-ba-kXb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="insertSegmentButton" destination="LLJ-Mk-9xr" id="f2m-R4-ngr"/>
                         <outlet property="multiSegmentedControl" destination="Obj-Pt-Xyx" id="m4u-Lp-Nfl"/>
-                        <outlet property="segmented" destination="mOX-Rm-eV2" id="GsK-7g-4Qk"/>
+                        <outlet property="removeAllSegments" destination="HmS-3t-pOq" id="a7e-ff-eKu"/>
+                        <outlet property="removeSegmentButton" destination="sy6-My-upo" id="OMU-BL-X8W"/>
+                        <outlet property="selectedIndicesLabel" destination="6CY-Gr-46O" id="6QW-J7-WXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
