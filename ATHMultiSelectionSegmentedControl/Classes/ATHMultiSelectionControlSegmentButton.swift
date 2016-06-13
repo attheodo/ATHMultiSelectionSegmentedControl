@@ -17,11 +17,12 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     private var _isButtonSelected: Bool = false
     private var _isButtonEnabled: Bool = true
     
-    // MARL: - Public Properties
+    // MARK: - Public Properties
+    /// Whether the button is currently in a selected state
     internal var isButtonSelected: Bool {
         return _isButtonSelected
     }
-    
+    /// Whether the button
     internal var isButtonEnabled: Bool {
         return _isButtonEnabled
     }
@@ -59,6 +60,12 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     }
     
     // MARK: - Private Methods
+    /**
+     Configures the initial style of the button
+     - Sets title color
+     - Clears background color
+     - Adds a border of 0.5 px
+    */
     private func _configureButton() {
 
         setTitleColor(tintColor, forState: .Normal)
@@ -70,7 +77,9 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         
     }
     
-    
+    /**
+     Styles the button as selected
+    */
     private func _setSelectedState() {
         
         backgroundColor = tintColor
@@ -78,7 +87,10 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         
     }
     
-    private func _setUnselectedState() {
+    /**
+     Styles the button as deselected
+    */
+    private func _setDeselectedState() {
         
         backgroundColor = UIColor.clearColor()        
         setTitleColor(tintColor, forState: .Normal)
@@ -86,17 +98,23 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     }
     
     // MARK: - Public Methods
+    /**
+     Toggles the receiver's selection state and styles it appropriately
+    */
     internal func setButtonSelected(isSelected: Bool) {
         
         _isButtonSelected = isSelected
-        _isButtonSelected ? _setSelectedState() : _setUnselectedState()
+        _isButtonSelected ? _setSelectedState() : _setDeselectedState()
         
     }
     
+    /**
+     Toggles the receiver's enabled/disabled state and styles it appropriately
+    */
     internal func setButtonEnabled(isEnabled: Bool) {
 
         if isEnabled {
-            _setUnselectedState()
+            _setDeselectedState()
         } else {
             setTitleColor(UIColor.grayColor(), forState: .Normal)
             backgroundColor = UIColor.clearColor()
