@@ -9,26 +9,77 @@
 import UIKit
 import ATHMultiSelectionSegmentedControl
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MultiSelectionSegmentedControlDelegate {
 
+    // MARK: - IBOutlets
+    /// The multi selection segmented control
     @IBOutlet weak var multiSegmentedControl: MultiSelectionSegmentedControl!
-    @IBOutlet weak var segmented: UISegmentedControl!
+    /// The label indicating the selected indices
+    @IBOutlet weak var selectedIndicesLabel: UILabel!
+    /// Button for inserting segments
+    @IBOutlet weak var insertSegmentButton: UIButton!
+    /// Button for removing segments
+    @IBOutlet weak var removeSegmentButton: UIButton!
+    /// Button for remove all segments
+    @IBOutlet weak var removeAllSegments: UIButton!
     
+    // MARK: - View Lifecyle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        multiSegmentedControl.insertSegmentsWithTitles(["one", "two", "three"])
-
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
-            //self.segmented.insertSegmentWithTitle("lala", atIndex: 2, animated: false)
-            //self.multiSegmentedControl.removeSegmentAtIndex(2, animated: true)
-            self.multiSegmentedControl.insertSegmentWithTitle("four", atIndex: 4, animated: true)
-        }
+        
+        /*
+         Here the control is added as an IBOutlet. You can always add it programmatically like
+         
+         let multiSegmentedControl = MultiSelectionSegmentedControl()
+         view.addSubview(multiSegmentedControl)
+        */
+        
+        multiSegmentedControl.insertSegmentsWithTitles(["Title 1"])
+        multiSegmentedControl.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - IBActions
+    @IBAction func insertSegment(sender: UIButton) {
+        
+        let title = "Title \(String(multiSegmentedControl.numberOfSegments + 1))"
+        
+        multiSegmentedControl.insertSegmentWithTitle(title, atIndex: multiSegmentedControl.numberOfSegments, animated: true)
+        
+    }
+    
+    @IBAction func removeSegment(sender: UIButton) {
+        multiSegmentedControl.removeSegmentAtIndex(multiSegmentedControl.numberOfSegments, animated: true)
+    }
+    
+    @IBAction func removeAllSegments(sender: UIButton) {
+        multiSegmentedControl.removeAllSegments()
+    }
+    
+    // MARK: - ATHMultiSelectionSegmentedControlDelegate
+
+    /**
+     Delegate method for `MultiSelectionSegmentedControl`. Called only when the user
+     interacts with the control and not when the control is configured programmatically!
+    */
+    func multiSelectionSegmentedControl(control: MultiSelectionSegmentedControl, selectedIndices indices: [Int]) {
+        
+        selectedIndicesLabel.text = "Selected Indices: ["
+        
+        for index in indices {
+            selectedIndicesLabel.text?.appendContentsOf("\(String(index)),")
+        }
+        
+        if indices.count != 0 {
+            selectedIndicesLabel.text = String(selectedIndicesLabel.text!.characters.dropLast())
+        }
+        
+        selectedIndicesLabel.text?.appendContentsOf("]")
+    
     }
 
 }
