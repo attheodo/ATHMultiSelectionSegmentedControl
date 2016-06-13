@@ -125,4 +125,66 @@ class ATHMultiSelectionSegmentedControlTests: XCTestCase {
         expect(self.segmentedControl.titleForSegmentAtIndex(2)) == "one"
         
     }
+    
+    func testSetEnabledMethodWithInvalidIndex() {
+
+        segmentedControl.insertSegmentsWithTitles(["1", "2", "3", "4"])
+        segmentedControl.layoutSubviews()
+        
+        segmentedControl.setEnabled(false, forSegmentAtIndex: -1)
+        
+        for index in 0..<segmentedControl.numberOfSegments {
+            expect(self.segmentedControl.isEnabledForSegmentAtIndex(index)) == true
+        }
+
+    }
+    
+    func testSetEnabledMethod() {
+        
+        segmentedControl.insertSegmentsWithTitles(["1", "2", "3", "4"])
+        segmentedControl.layoutSubviews()
+        
+        segmentedControl.setEnabled(false, forSegmentAtIndex: 0)
+        expect(self.segmentedControl.isEnabledForSegmentAtIndex(0)).toEventually(beFalse())
+        
+        
+        segmentedControl.setEnabled(true, forSegmentAtIndex: 1)
+        expect(self.segmentedControl.isEnabledForSegmentAtIndex(1)).toEventually(beTrue())
+        
+        segmentedControl.setEnabled(false, forSegmentAtIndex: 100)
+    expect(self.segmentedControl.isEnabledForSegmentAtIndex(self.segmentedControl.numberOfSegments-1)).toEventually(beFalse())
+
+    }
+    
+    func testRemoveAllSegmentsMethodWithNoSegments() {
+        
+        self.segmentedControl.removeAllSegments()
+        expect(self.segmentedControl.numberOfSegments) == 0
+    
+    }
+    
+    func testRemoveAllSegmentsMethod() {
+        
+        segmentedControl.insertSegmentsWithTitles(["1", "2", "3", "4"])
+        segmentedControl.layoutSubviews()
+        
+        expect(self.segmentedControl.numberOfSegments) == 4
+        segmentedControl.removeAllSegments()
+        expect(self.segmentedControl.numberOfSegments) == 0
+        
+    }
+    
+    func testRemoveSegmentAtIndexMethod() {
+        
+        segmentedControl.insertSegmentsWithTitles(["1", "2", "3", "4"])
+        segmentedControl.layoutSubviews()
+
+        expect(self.segmentedControl.numberOfSegments) == 4
+        segmentedControl.removeSegmentAtIndex(0, animated: false)
+        expect(self.segmentedControl.numberOfSegments) == 3
+        expect(self.segmentedControl.titleForSegmentAtIndex(0)) == "2"
+        expect(self.segmentedControl.titleForSegmentAtIndex(self.segmentedControl.numberOfSegments-1)) == "4"
+        
+    }
+    
 }
