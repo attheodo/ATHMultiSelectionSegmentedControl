@@ -12,6 +12,33 @@
 
 [![Demo](misc/demo.gif "ATHMultiSelectionSegmentedControl")](/)
 
+## API
+```swift
+    import MultiSegmentedControl
+
+// initialize empty segmented control
+let segmentedControl = MultiSegmentedControl()
+
+// Add items to segmented control at once...
+segmentedControl.insertSegmentsWithTitles(["Segment 1", "Segment 2", "Segment 3"])
+
+// ... or one by one
+segmentedControl.insertSegmentWithTitle("Segment 4", atIndex: 3, animated: true)
+
+// Get and set items
+segmentedControl.titleForSegmentAtIndex(0) // Segment 1
+segmentControl.setTitle("Title", forSegmentAtIndex: 0)
+segmentedControl.titleForSegmentAtIndex(0) // Title
+
+// Enable or disable an option
+segmentedControl.setEnabled(false, forSegmentAtIndex: 0) // "Title" segment is now disabled
+segmentedControl.isEnabledForSegmentAtIndex(0) // false
+segmentedControl.setEnabled(true, forSegmentAtIndex: 0) // "Title" segment is now enabled
+segmentedControl.isEnabledForSegmentAtIndex(0) // true 
+
+
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
