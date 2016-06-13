@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable public class MultiSelectionSegmentedControl: UIView {
+public class MultiSelectionSegmentedControl: UIView {
     
     // MARK: - Private Properties
     private var _segmentButtons: [ATHMultiSelectionControlSegmentButton]?
@@ -17,21 +17,20 @@ import UIKit
     
     // MARK: - Public Properties
     
-    // MARK: Appearance
-    @IBInspectable var cornerRadius: CGFloat = 3 {
+    public var cornerRadius: CGFloat = 3 {
         didSet {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 1 {
+    public var borderWidth: CGFloat = 1 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable override public var tintColor: UIColor! {
+    override public var tintColor: UIColor! {
         didSet {
             layer.borderColor = tintColor.CGColor
         }
@@ -61,7 +60,7 @@ import UIKit
             var indices: [Int] = []
             
             for (index, segmentButton) in segments.enumerate() {
-                if segmentButton.isButtonSelected {
+                if segmentButton.isButtonSelected && segmentButton.isButtonEnabled {
                     indices.append(index)
                 }
             }
@@ -79,7 +78,9 @@ import UIKit
             _deselectAllSegments()
 
             for index in newValue {
-                segments[index].setButtonSelected(true)
+                if segments[index].isButtonEnabled {
+                    segments[index].setButtonSelected(true)
+                }
             }
             
         }
@@ -137,7 +138,7 @@ import UIKit
                 button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), forControlEvents: .TouchUpInside)
                 
                 button.setTitle(segmentTitle, forState: .Normal)
-                
+
                 _segmentButtons?.append(button)
                 
                 self.addSubview(button)
@@ -196,6 +197,17 @@ import UIKit
      By default all segments are enabled
     */
     public func setEnabled(enabled: Bool, forSegmentAtIndex segment: Int) {
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+
+            guard let segments = self._segmentButtons where segments.count > 0 && segment >= 0 else {
+                return
+            }
+
+            let index = segment > segments.count - 1 ? segments.count - 1 : segment
+            segments[index].setButtonEnabled(enabled)
+
+        }
         
     }
     
@@ -208,16 +220,29 @@ import UIKit
      - returns: `true` if the given segment is enabled and `false` if the segment is disabled. By default, segments are enabled.
     */
     public func isEnabledForSegmentAtIndex(segment: Int) -> Bool {
-        return true
+
+        guard let segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
+            return false
+        }
+        
+        let index = segment > segments.count - 1 ? segments.count - 1 : segment
+        
+        return segments[index].isButtonEnabled
+
     }
     
     // MARK: Managing Segments
+    /**
+     Creates a number of segments based on the passed array of titles
+     
+     - parameter titles: The titles of the segments to create.
+    */
     public func insertSegmentsWithTitles(titles: [String]) {
         
         _items = titles
         _configureAppearance()
         
-        self.setNeedsLayout()
+        setNeedsLayout()
     
     }
     
@@ -288,17 +313,17 @@ import UIKit
     */
     public func removeSegmentAtIndex(segment: Int, animated: Bool) {
        
-        guard var segments = _segmentButtons where segments.count > 0 && segment > 0 else {
+        guard var segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
             return
         }
         
         // if segment is out of range pin it
         let index = segment > segments.count - 1 ? segments.count - 1 : segment
         
-        _items?.removeAtIndex(index)
+        _items!.removeAtIndex(index)
         
         segments[index].removeFromSuperview()
-        segments.removeAtIndex(index)
+        _segmentButtons!.removeAtIndex(index)
         
         let duration = animated ? 0.35 : 0
         
@@ -331,6 +356,12 @@ import UIKit
     }
     
     // MARK: - Private Methods
+    /**
+     Configures the control's appearance:
+     - Clears background color
+     - Sets corner radius
+     - Sets border width and color
+    */
     private func _configureAppearance() {
         
         backgroundColor = UIColor.clearColor()
@@ -341,9 +372,17 @@ import UIKit
     
     }
     
+    /**
+     Selector to the control's segment buttons. Handles selecting/deselecting segments
+     according to whether they are enabled or not.
+    */
     @objc private func _didTouchUpInsideSegment(segmentButton: ATHMultiSelectionControlSegmentButton) {
         
         guard let segmentButtons = _segmentButtons where segmentButtons.count > 0 else {
+            return
+        }
+        
+        guard segmentButton.isButtonEnabled else {
             return
         }
         
@@ -355,6 +394,9 @@ import UIKit
         
     }
     
+    /**
+     Deselects all segments of the segmented control
+    */
     private func _deselectAllSegments() {
         
         guard let segments = _segmentButtons where segments.count > 0 else {
