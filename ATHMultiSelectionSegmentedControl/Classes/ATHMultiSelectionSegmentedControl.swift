@@ -43,6 +43,21 @@ public class MultiSelectionSegmentedControl: UIView {
     override public var tintColor: UIColor! {
         didSet {
             layer.borderColor = tintColor.CGColor
+            if let segmentButtons = _segmentButtons {
+                for (index, button) in segmentButtons.enumerate() {
+                    button.highlighted = selectedSegmentIndices.contains(index)
+                }
+            }
+        }
+    }
+
+    public override var backgroundColor: UIColor? {
+        didSet {
+            if let segmentButtons = _segmentButtons {
+                for (index, button) in segmentButtons.enumerate() {
+                    button.highlighted = selectedSegmentIndices.contains(index)
+                }
+            }
         }
     }
     
@@ -133,28 +148,41 @@ public class MultiSelectionSegmentedControl: UIView {
         if subviews.count == 0 {
 
             _segmentButtons = []
-            
+
+
+            let buttonWidth = frame.width / CGFloat(items.count)
+            let buttonHeight = frame.height
+
             for (index, segmentTitle) in items.enumerate() {
-                
-                let buttonWidth = frame.width / CGFloat(items.count)
-                let buttonHeight = frame.height
-                
                 let buttonFrame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
 
                 let button = ATHMultiSelectionControlSegmentButton(frame: buttonFrame)
-                
+
                 button.tintColor = tintColor
                 button.backgroundColor = backgroundColor
+                button.setButtonSelected(selectedSegmentIndices.contains(index))
                 button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), forControlEvents: .TouchUpInside)
-                
+
                 button.setTitle(segmentTitle, forState: .Normal)
 
                 _segmentButtons?.append(button)
                 
                 self.addSubview(button)
-
+                
             }
             
+        }
+        else {
+            if let segmentButtons = _segmentButtons {
+                let buttonWidth = frame.width / CGFloat(segmentButtons.count)
+                let buttonHeight = frame.height
+
+                for (index, button) in segmentButtons.enumerate() {
+                    let buttonFrame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+                    button.frame = buttonFrame
+                    button.setButtonSelected(selectedSegmentIndices.contains(index))
+                }
+            }
         }
     
     }
@@ -383,7 +411,7 @@ public class MultiSelectionSegmentedControl: UIView {
     */
     private func _configureAppearance() {
         
-        backgroundColor = UIColor.clearColor()
+//        backgroundColor = UIColor.clearColor()
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
         layer.borderWidth = 1.0

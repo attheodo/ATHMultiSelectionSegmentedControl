@@ -81,10 +81,11 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
      Styles the button as selected
     */
     private func _setSelectedState() {
-        
+
+        layer.borderColor = backgroundColor?.CGColor
         backgroundColor = tintColor
         setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        
+
     }
     
     /**
@@ -94,6 +95,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         
         backgroundColor = UIColor.clearColor()        
         setTitleColor(tintColor, forState: .Normal)
+        layer.borderColor = tintColor.CGColor
         
     }
     
