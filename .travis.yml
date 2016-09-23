@@ -3,7 +3,7 @@ language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
-- gem install cocoapods -pre # Since Travis is not always on latest version
+- gem install cocoapods --pre # Since Travis is not always on latest version
 - pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -workspace Example/ATHMultiSelectionSegmentedControl.xcworkspace -scheme ATHMultiSelectionSegmentedControl-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
