@@ -68,7 +68,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     */
     fileprivate func _configureButton() {
 
-        setTitleColor(tintColor, for: UIControlState())
+        setTitleColor(tintColor, for: .normal)
         
         backgroundColor = UIColor.clear
         
@@ -84,7 +84,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
 
         layer.borderColor = backgroundColor?.cgColor
         backgroundColor = tintColor
-        setTitleColor(UIColor.white, for: UIControlState())
+        setTitleColor(UIColor.white, for: .normal)
 
     }
     
@@ -94,7 +94,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     fileprivate func _setDeselectedState() {
         
         backgroundColor = UIColor.clear        
-        setTitleColor(tintColor, for: UIControlState())
+        setTitleColor(tintColor, for: .normal)
         layer.borderColor = tintColor.cgColor
         
     }
@@ -118,7 +118,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         if isEnabled {
             _setDeselectedState()
         } else {
-            setTitleColor(UIColor.gray, for: UIControlState())
+            setTitleColor(UIColor.gray, for: .normal)
             backgroundColor = UIColor.clear
         }
         

@@ -163,7 +163,7 @@ open class MultiSelectionSegmentedControl: UIView {
                 button.setButtonSelected(selectedSegmentIndices.contains(index))
                 button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), for: .touchUpInside)
 
-                button.setTitle(segmentTitle, for: UIControlState())
+                button.setTitle(segmentTitle, for: .normal)
 
                 _segmentButtons?.append(button)
                 
@@ -203,7 +203,7 @@ open class MultiSelectionSegmentedControl: UIView {
         
         let index = segment > segments.count - 1 ? segments.count - 1 : segment
         
-        segments[index].setTitle(title, for: UIControlState())
+        segments[index].setTitle(title, for: .normal)
         
     }
     
@@ -318,7 +318,7 @@ open class MultiSelectionSegmentedControl: UIView {
         button.backgroundColor = backgroundColor
         button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), for: .touchUpInside)
         
-        button.setTitle(title, for: UIControlState())
+        button.setTitle(title, for: .normal)
         
         addSubview(button)
         
