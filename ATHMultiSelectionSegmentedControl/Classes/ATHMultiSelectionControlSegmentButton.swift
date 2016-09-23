@@ -14,8 +14,8 @@ import QuartzCore
 internal class ATHMultiSelectionControlSegmentButton: UIButton {
     
     // MARK: - Private Properties
-    private var _isButtonSelected: Bool = false
-    private var _isButtonEnabled: Bool = true
+    fileprivate var _isButtonSelected: Bool = false
+    fileprivate var _isButtonEnabled: Bool = true
     
     // MARK: - Public Properties
     /// Whether the button is currently in a selected state
@@ -27,21 +27,21 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
         return _isButtonEnabled
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
        
         didSet {
         
             // ignore highlighting if button is disabled
             if !_isButtonEnabled { return }
             
-            if highlighted {
-                backgroundColor = tintColor.colorWithAlphaComponent(0.1)
+            if isHighlighted {
+                backgroundColor = tintColor.withAlphaComponent(0.1)
             } else {
             
                 if _isButtonSelected {
                     backgroundColor = tintColor
                 } else {
-                    backgroundColor = UIColor.clearColor()
+                    backgroundColor = UIColor.clear
                 }
             
             }
@@ -66,36 +66,36 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
      - Clears background color
      - Adds a border of 0.5 px
     */
-    private func _configureButton() {
+    fileprivate func _configureButton() {
 
-        setTitleColor(tintColor, forState: .Normal)
+        setTitleColor(tintColor, for: .normal)
         
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
         layer.borderWidth = 0.5
-        layer.borderColor = tintColor.CGColor
+        layer.borderColor = tintColor.cgColor
         
     }
     
     /**
      Styles the button as selected
     */
-    private func _setSelectedState() {
+    fileprivate func _setSelectedState() {
 
-        layer.borderColor = backgroundColor?.CGColor
+        layer.borderColor = backgroundColor?.cgColor
         backgroundColor = tintColor
-        setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        setTitleColor(UIColor.white, for: .normal)
 
     }
     
     /**
      Styles the button as deselected
     */
-    private func _setDeselectedState() {
+    fileprivate func _setDeselectedState() {
         
-        backgroundColor = UIColor.clearColor()        
-        setTitleColor(tintColor, forState: .Normal)
-        layer.borderColor = tintColor.CGColor
+        backgroundColor = UIColor.clear        
+        setTitleColor(tintColor, for: .normal)
+        layer.borderColor = tintColor.cgColor
         
     }
     
@@ -103,7 +103,7 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     /**
      Toggles the receiver's selection state and styles it appropriately
     */
-    internal func setButtonSelected(isSelected: Bool) {
+    internal func setButtonSelected(_ isSelected: Bool) {
         
         _isButtonSelected = isSelected
         _isButtonSelected ? _setSelectedState() : _setDeselectedState()
@@ -113,13 +113,13 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     /**
      Toggles the receiver's enabled/disabled state and styles it appropriately
     */
-    internal func setButtonEnabled(isEnabled: Bool) {
+    internal func setButtonEnabled(_ isEnabled: Bool) {
 
         if isEnabled {
             _setDeselectedState()
         } else {
-            setTitleColor(UIColor.grayColor(), forState: .Normal)
-            backgroundColor = UIColor.clearColor()
+            setTitleColor(UIColor.gray, for: .normal)
+            backgroundColor = UIColor.clear
         }
         
         _isButtonEnabled = isEnabled

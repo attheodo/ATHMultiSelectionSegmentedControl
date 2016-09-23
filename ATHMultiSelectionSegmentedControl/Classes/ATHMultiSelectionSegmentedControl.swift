@@ -15,56 +15,56 @@ import UIKit
 public protocol MultiSelectionSegmentedControlDelegate: class {
     /// Gets called *ONLY* if the user interacts with the control and not
     /// when the control is configured programatically
-    func multiSelectionSegmentedControl(control: MultiSelectionSegmentedControl, selectedIndices indices: [Int])
+    func multiSelectionSegmentedControl(_ control: MultiSelectionSegmentedControl, selectedIndices indices: [Int])
 }
 
-public class MultiSelectionSegmentedControl: UIView {
+open class MultiSelectionSegmentedControl: UIView {
     
     // MARK: - Private Properties
-    private var _segmentButtons: [ATHMultiSelectionControlSegmentButton]?
-    private var _items: [String]?
+    fileprivate var _segmentButtons: [ATHMultiSelectionControlSegmentButton]?
+    fileprivate var _items: [String]?
     
     // MARK: - Public Properties
-    public weak var delegate: MultiSelectionSegmentedControlDelegate?
+    open weak var delegate: MultiSelectionSegmentedControlDelegate?
     
-    public var cornerRadius: CGFloat = 3 {
+    open var cornerRadius: CGFloat = 3 {
         didSet {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
     }
     
-    public var borderWidth: CGFloat = 1 {
+    open var borderWidth: CGFloat = 1 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    override public var tintColor: UIColor! {
+    override open var tintColor: UIColor! {
         didSet {
-            layer.borderColor = tintColor.CGColor
+            layer.borderColor = tintColor.cgColor
             if let segmentButtons = _segmentButtons {
-                for (index, button) in segmentButtons.enumerate() {
-                    button.highlighted = selectedSegmentIndices.contains(index)
+                for (index, button) in segmentButtons.enumerated() {
+                    button.isHighlighted = selectedSegmentIndices.contains(index)
                 }
             }
         }
     }
 
-    public override var backgroundColor: UIColor? {
+    open override var backgroundColor: UIColor? {
         didSet {
             if let segmentButtons = _segmentButtons {
-                for (index, button) in segmentButtons.enumerate() {
-                    button.highlighted = selectedSegmentIndices.contains(index)
+                for (index, button) in segmentButtons.enumerated() {
+                    button.isHighlighted = selectedSegmentIndices.contains(index)
                 }
             }
         }
     }
     
     /// Returns the number of segments the receiver has. (read-only)
-    public var numberOfSegments: Int {
+    open var numberOfSegments: Int {
         
-        guard let segments = _segmentButtons where segments.count > 0 else {
+        guard let segments = _segmentButtons , segments.count > 0 else {
             return 0
         }
         
@@ -74,17 +74,17 @@ public class MultiSelectionSegmentedControl: UIView {
     /**
      An array with the currently selected segment indices of the receiver.
     */
-    public var selectedSegmentIndices: [Int] {
+    open var selectedSegmentIndices: [Int] {
         
         get {
 
-            guard let segments = _segmentButtons where segments.count > 0 else {
+            guard let segments = _segmentButtons , segments.count > 0 else {
                 return []
             }
             
             var indices: [Int] = []
             
-            for (index, segmentButton) in segments.enumerate() {
+            for (index, segmentButton) in segments.enumerated() {
                 if segmentButton.isButtonSelected && segmentButton.isButtonEnabled {
                     indices.append(index)
                 }
@@ -96,7 +96,7 @@ public class MultiSelectionSegmentedControl: UIView {
         
         set {
             
-            guard let segments = _segmentButtons where segments.count > 0 else {
+            guard let segments = _segmentButtons , segments.count > 0 else {
                 return
             }
             
@@ -124,7 +124,7 @@ public class MultiSelectionSegmentedControl: UIView {
         
         _items = items
         
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         _configureAppearance()
         
     }
@@ -133,15 +133,15 @@ public class MultiSelectionSegmentedControl: UIView {
         super.init(coder: aDecoder)
     }
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         _configureAppearance()
     }
     
     // MARK: - Public Methods
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
 
-        guard let items = _items where items.count > 0 else {
+        guard let items = _items , items.count > 0 else {
             return
         }
         
@@ -153,17 +153,17 @@ public class MultiSelectionSegmentedControl: UIView {
             let buttonWidth = frame.width / CGFloat(items.count)
             let buttonHeight = frame.height
 
-            for (index, segmentTitle) in items.enumerate() {
-                let buttonFrame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+            for (index, segmentTitle) in items.enumerated() {
+                let buttonFrame = CGRect(x: CGFloat(index)*buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
 
                 let button = ATHMultiSelectionControlSegmentButton(frame: buttonFrame)
 
                 button.tintColor = tintColor
                 button.backgroundColor = backgroundColor
                 button.setButtonSelected(selectedSegmentIndices.contains(index))
-                button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), forControlEvents: .TouchUpInside)
+                button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), for: .touchUpInside)
 
-                button.setTitle(segmentTitle, forState: .Normal)
+                button.setTitle(segmentTitle, for: .normal)
 
                 _segmentButtons?.append(button)
                 
@@ -177,8 +177,8 @@ public class MultiSelectionSegmentedControl: UIView {
                 let buttonWidth = frame.width / CGFloat(segmentButtons.count)
                 let buttonHeight = frame.height
 
-                for (index, button) in segmentButtons.enumerate() {
-                    let buttonFrame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+                for (index, button) in segmentButtons.enumerated() {
+                    let buttonFrame = CGRect(x: CGFloat(index)*buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
                     button.frame = buttonFrame
                     button.setButtonSelected(selectedSegmentIndices.contains(index))
                 }
@@ -195,15 +195,15 @@ public class MultiSelectionSegmentedControl: UIView {
      - parameter segment: An index number identifying a segment in the control. 
      It must be a number between 0 and the number of segments (numberOfSegments) minus 1; values exceeding this upper range are pinned to it.
     */
-    public func setTitle(title: String, forSegmentAtIndex segment: Int) {
+    open func setTitle(_ title: String, forSegmentAtIndex segment: Int) {
         
-        guard let segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
+        guard let segments = _segmentButtons , segments.count > 0 && segment >= 0 else {
             return
         }
         
         let index = segment > segments.count - 1 ? segments.count - 1 : segment
         
-        segments[index].setTitle(title, forState: .Normal)
+        segments[index].setTitle(title, for: .normal)
         
     }
     
@@ -214,9 +214,9 @@ public class MultiSelectionSegmentedControl: UIView {
      minus 1; values exceeding this upper range are pinned to it.
      - returns: Returns the string (title) assigned to the receiver as content.
     */
-    public func titleForSegmentAtIndex(segment: Int) -> String? {
+    open func titleForSegmentAtIndex(_ segment: Int) -> String? {
        
-        guard let segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
+        guard let segments = _segmentButtons , segments.count > 0 && segment >= 0 else {
             return nil
         }
         
@@ -234,11 +234,11 @@ public class MultiSelectionSegmentedControl: UIView {
      - parameter enabled: `true` to enable the specified segment or `false` to disable the segment.
      By default all segments are enabled
     */
-    public func setEnabled(enabled: Bool, forSegmentAtIndex segment: Int) {
+    open func setEnabled(_ enabled: Bool, forSegmentAtIndex segment: Int) {
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
 
-            guard let segments = self._segmentButtons where segments.count > 0 && segment >= 0 else {
+            guard let segments = self._segmentButtons , segments.count > 0 && segment >= 0 else {
                 return
             }
 
@@ -257,9 +257,9 @@ public class MultiSelectionSegmentedControl: UIView {
      
      - returns: `true` if the given segment is enabled and `false` if the segment is disabled. By default, segments are enabled.
     */
-    public func isEnabledForSegmentAtIndex(segment: Int) -> Bool {
+    open func isEnabledForSegmentAtIndex(_ segment: Int) -> Bool {
 
-        guard let segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
+        guard let segments = _segmentButtons , segments.count > 0 && segment >= 0 else {
             return false
         }
         
@@ -275,7 +275,7 @@ public class MultiSelectionSegmentedControl: UIView {
      
      - parameter titles: The titles of the segments to create.
     */
-    public func insertSegmentsWithTitles(titles: [String]) {
+    open func insertSegmentsWithTitles(_ titles: [String]) {
         
         _items = titles
         _configureAppearance()
@@ -291,7 +291,7 @@ public class MultiSelectionSegmentedControl: UIView {
      - parameter segment: An index number identifying a segment in the control. The new segment is inserted just before the designated one.
      - parameter animated: true if the insertion of the new segment should be animated, otherwise false.
     */
-    public func insertSegmentWithTitle(title: String, atIndex segment: Int, animated: Bool) {
+    open func insertSegmentWithTitle(_ title: String, atIndex segment: Int, animated: Bool) {
         
         guard segment >= 0 else {
             return
@@ -309,40 +309,40 @@ public class MultiSelectionSegmentedControl: UIView {
         if index > _items!.count {
             _items!.append(title)
         } else {
-            _items!.insert(title, atIndex: index)
+            _items!.insert(title, at: index)
         }
         
-        let button = ATHMultiSelectionControlSegmentButton(frame: CGRectMake(self.frame.width, 0, 0, self.frame.height))
+        let button = ATHMultiSelectionControlSegmentButton(frame: CGRect(x: self.frame.width, y: 0, width: 0, height: self.frame.height))
        
         button.tintColor = tintColor
         button.backgroundColor = backgroundColor
-        button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), for: .touchUpInside)
         
-        button.setTitle(title, forState: .Normal)
+        button.setTitle(title, for: .normal)
         
         addSubview(button)
         
         if index > _segmentButtons!.count {
             _segmentButtons?.append(button)
         } else {
-            _segmentButtons!.insert(button, atIndex: index)
+            _segmentButtons!.insert(button, at: index)
         }
         
         let duration = animated ? 0.35 : 0
 
-        UIView.animateWithDuration(duration) {
+        UIView.animate(withDuration: duration, animations: {
 
-            for (index, segment) in self._segmentButtons!.enumerate() {
+            for (index, segment) in self._segmentButtons!.enumerated() {
                 
                 let buttonWidth = self.frame.width / CGFloat(self._items!.count)
                 let buttonHeight = self.frame.height
                 
-                let buttonFrame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+                let buttonFrame = CGRect(x: CGFloat(index)*buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
                 segment.frame = buttonFrame
                 
             }
 
-        }
+        }) 
         
     }
     
@@ -353,33 +353,33 @@ public class MultiSelectionSegmentedControl: UIView {
      values exceeding this upper range are pinned to it.
      - parameter animated: `true` if the removal of the new segment should be animated, otherwise `false`.
     */
-    public func removeSegmentAtIndex(segment: Int, animated: Bool) {
+    open func removeSegmentAtIndex(_ segment: Int, animated: Bool) {
        
-        guard var segments = _segmentButtons where segments.count > 0 && segment >= 0 else {
+        guard var segments = _segmentButtons , segments.count > 0 && segment >= 0 else {
             return
         }
         
         // if segment is out of range pin it
         let index = segment > segments.count - 1 ? segments.count - 1 : segment
         
-        _items!.removeAtIndex(index)
+        _items!.remove(at: index)
         
         segments[index].removeFromSuperview()
-        segments.removeAtIndex(index)
-        _segmentButtons!.removeAtIndex(index)
+        segments.remove(at: index)
+        _segmentButtons!.remove(at: index)
         
         let duration = animated ? 0.35 : 0
         
-        UIView.animateWithDuration(duration) {
-            for (index, _) in segments.enumerate() {
+        UIView.animate(withDuration: duration, animations: {
+            for (index, _) in segments.enumerated() {
                
                 let buttonWidth = self.frame.width / CGFloat(segments.count)
                 let buttonHeight = self.frame.height
                 
-                segments[index].frame = CGRectMake(CGFloat(index)*buttonWidth, 0, buttonWidth, buttonHeight)
+                segments[index].frame = CGRect(x: CGFloat(index)*buttonWidth, y: 0, width: buttonWidth, height: buttonHeight)
             
             }
-        }
+        }) 
         
         if segments.count == 0 {
             layer.borderWidth = 0
@@ -390,7 +390,7 @@ public class MultiSelectionSegmentedControl: UIView {
     /**
      Removes all segments of the receiver.
     */
-    public func removeAllSegments() {
+    open func removeAllSegments() {
        
         layer.borderWidth = 0
 
@@ -409,13 +409,13 @@ public class MultiSelectionSegmentedControl: UIView {
      - Sets corner radius
      - Sets border width and color
     */
-    private func _configureAppearance() {
+    fileprivate func _configureAppearance() {
         
 //        backgroundColor = UIColor.clearColor()
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
         layer.borderWidth = 1.0
-        layer.borderColor = tintColor.CGColor
+        layer.borderColor = tintColor.cgColor
     
     }
     
@@ -423,9 +423,9 @@ public class MultiSelectionSegmentedControl: UIView {
      Selector to the control's segment buttons. Handles selecting/deselecting segments
      according to whether they are enabled or not.
     */
-    @objc private func _didTouchUpInsideSegment(segmentButton: ATHMultiSelectionControlSegmentButton) {
+    @objc fileprivate func _didTouchUpInsideSegment(_ segmentButton: ATHMultiSelectionControlSegmentButton) {
         
-        guard let segmentButtons = _segmentButtons where segmentButtons.count > 0 else {
+        guard let segmentButtons = _segmentButtons , segmentButtons.count > 0 else {
             return
         }
         
@@ -446,9 +446,9 @@ public class MultiSelectionSegmentedControl: UIView {
     /**
      Deselects all segments of the segmented control
     */
-    private func _deselectAllSegments() {
+    fileprivate func _deselectAllSegments() {
         
-        guard let segments = _segmentButtons where segments.count > 0 else {
+        guard let segments = _segmentButtons , segments.count > 0 else {
             return
         }
         

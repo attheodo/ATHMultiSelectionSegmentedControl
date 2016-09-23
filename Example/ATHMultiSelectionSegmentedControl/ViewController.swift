@@ -44,7 +44,7 @@ class ViewController: UIViewController, MultiSelectionSegmentedControlDelegate {
     }
     
     // MARK: - IBActions
-    @IBAction func insertSegment(sender: UIButton) {
+    @IBAction func insertSegment(_ sender: UIButton) {
         
         let title = "Title \(String(multiSegmentedControl.numberOfSegments + 1))"
         
@@ -52,11 +52,11 @@ class ViewController: UIViewController, MultiSelectionSegmentedControlDelegate {
         
     }
     
-    @IBAction func removeSegment(sender: UIButton) {
+    @IBAction func removeSegment(_ sender: UIButton) {
         multiSegmentedControl.removeSegmentAtIndex(multiSegmentedControl.numberOfSegments, animated: true)
     }
     
-    @IBAction func removeAllSegments(sender: UIButton) {
+    @IBAction func removeAllSegments(_ sender: UIButton) {
         multiSegmentedControl.removeAllSegments()
     }
     
@@ -66,19 +66,19 @@ class ViewController: UIViewController, MultiSelectionSegmentedControlDelegate {
      Delegate method for `MultiSelectionSegmentedControl`. Called only when the user
      interacts with the control and not when the control is configured programmatically!
     */
-    func multiSelectionSegmentedControl(control: MultiSelectionSegmentedControl, selectedIndices indices: [Int]) {
+    func multiSelectionSegmentedControl(_ control: MultiSelectionSegmentedControl, selectedIndices indices: [Int]) {
         
         selectedIndicesLabel.text = "Selected Indices: ["
         
         for index in indices {
-            selectedIndicesLabel.text?.appendContentsOf("\(String(index)),")
+            selectedIndicesLabel.text?.append("\(String(index)),")
         }
         
         if indices.count != 0 {
             selectedIndicesLabel.text = String(selectedIndicesLabel.text!.characters.dropLast())
         }
         
-        selectedIndicesLabel.text?.appendContentsOf("]")
+        selectedIndicesLabel.text?.append("]")
     
     }
 
