@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05DDF13078D347182654D5CF /* Pods_ATHMultiSelectionSegmentedControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D3F33D51F31B5559AD3E8 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */; };
 		4D796BD31D05E7E900CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796BD11D05E7DD00CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		A53F309A2187DB05265656E2 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE27C310C56BC0DFF71997 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */; };
-		D26756647D44D0B1DE1DE373 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7351390CDE4FBC2EDA94FC30 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */; };
+		81F51D8D8A6AE6339023F6CE /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E9094BB37854DB5D708176 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,10 +28,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082D3F33D51F31B5559AD3E8 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATHMultiSelectionSegmentedControl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11196A8CF97C486FC2B0D302 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1B0E1020D83AD7AFBFF30EF1 /* Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Example/Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2769D367A19A8F4D737DB23D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		43C2CCB3798B3012F2F61453 /* Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Example/Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		45A662688298A735AAE4EAA8 /* Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4D796BD11D05E7DD00CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATHMultiSelectionSegmentedControlTests.swift; sourceTree = "<group>"; };
+		51E9094BB37854DB5D708176 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATHMultiSelectionSegmentedControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATHMultiSelectionSegmentedControl_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +44,9 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATHMultiSelectionSegmentedControl_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7351390CDE4FBC2EDA94FC30 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATHMultiSelectionSegmentedControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B5658542ECA984AAAED8BA8 /* Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A095ABEE7B69D7344D756EA2 /* Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Example/Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A9BF265CAB9E2333FB668A2E /* ATHMultiSelectionSegmentedControl.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ATHMultiSelectionSegmentedControl.podspec; path = ../ATHMultiSelectionSegmentedControl.podspec; sourceTree = "<group>"; };
-		B63D8DA8C0FDDD168E69CAAA /* Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Example/Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DABE27C310C56BC0DFF71997 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATHMultiSelectionSegmentedControl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F84C1DE7F13E47E8F314A5CE /* Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE773375C1AD31AF0D725F93 /* Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A53F309A2187DB05265656E2 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework in Frameworks */,
+				05DDF13078D347182654D5CF /* Pods_ATHMultiSelectionSegmentedControl_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,33 +62,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D26756647D44D0B1DE1DE373 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework in Frameworks */,
+				81F51D8D8A6AE6339023F6CE /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1634E0DEE435CD6EC8FA958C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				43C2CCB3798B3012F2F61453 /* Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig */,
-				B63D8DA8C0FDDD168E69CAAA /* Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig */,
-				F84C1DE7F13E47E8F314A5CE /* Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig */,
-				9B5658542ECA984AAAED8BA8 /* Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2BE63211CBE301A012BB958D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DABE27C310C56BC0DFF71997 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */,
-				7351390CDE4FBC2EDA94FC30 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +76,8 @@
 				607FACD21AFB9204008FA782 /* Example for ATHMultiSelectionSegmentedControl */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				1634E0DEE435CD6EC8FA958C /* Pods */,
-				2BE63211CBE301A012BB958D /* Frameworks */,
+				DBD5C5C9C8DEA24A5CD05402 /* Pods */,
+				E91E566443CD3684B07E2953 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +139,26 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		DBD5C5C9C8DEA24A5CD05402 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B0E1020D83AD7AFBFF30EF1 /* Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig */,
+				A095ABEE7B69D7344D756EA2 /* Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig */,
+				AE773375C1AD31AF0D725F93 /* Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig */,
+				45A662688298A735AAE4EAA8 /* Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E91E566443CD3684B07E2953 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				082D3F33D51F31B5559AD3E8 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */,
+				51E9094BB37854DB5D708176 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,12 +166,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ATHMultiSelectionSegmentedControl_Example" */;
 			buildPhases = (
+				8861E583EE9BE9AAE76FCED8 /* 📦 Check Pods Manifest.lock */,
 				09B35B2D2F8364D66A51DECB /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				F33516182D55E0C96BC8E888 /* [CP] Embed Pods Frameworks */,
 				D0A089C5FB3E0DED96BB0BF4 /* [CP] Copy Pods Resources */,
+				DA78EA3DE134B288775135BC /* 📦 Embed Pods Frameworks */,
+				BC2B40D084CBAFADFBE9792A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +189,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ATHMultiSelectionSegmentedControl_Tests" */;
 			buildPhases = (
+				ABF739092FECEECEC9994DCE /* 📦 Check Pods Manifest.lock */,
 				B211F59A2C1452EF269CA53A /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				75F934903169AC1917D7B763 /* [CP] Embed Pods Frameworks */,
 				D10F3B9FE442F67411566606 /* [CP] Copy Pods Resources */,
+				6DAD0EA19B1CC730C945EC76 /* 📦 Embed Pods Frameworks */,
+				B5F616002D89602248238573 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,6 +285,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		6DAD0EA19B1CC730C945EC76 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		75F934903169AC1917D7B763 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +315,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8861E583EE9BE9AAE76FCED8 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF739092FECEECEC9994DCE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		B211F59A2C1452EF269CA53A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +358,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B5F616002D89602248238573 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC2B40D084CBAFADFBE9792A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Example/Pods-ATHMultiSelectionSegmentedControl_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0A089C5FB3E0DED96BB0BF4 /* [CP] Copy Pods Resources */ = {
@@ -337,6 +418,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Tests/Pods-ATHMultiSelectionSegmentedControl_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA78EA3DE134B288775135BC /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ATHMultiSelectionSegmentedControl_Example/Pods-ATHMultiSelectionSegmentedControl_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F33516182D55E0C96BC8E888 /* [CP] Embed Pods Frameworks */ = {
@@ -493,7 +589,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43C2CCB3798B3012F2F61453 /* Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig */;
+			baseConfigurationReference = 1B0E1020D83AD7AFBFF30EF1 /* Pods-ATHMultiSelectionSegmentedControl_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -508,7 +604,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B63D8DA8C0FDDD168E69CAAA /* Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig */;
+			baseConfigurationReference = A095ABEE7B69D7344D756EA2 /* Pods-ATHMultiSelectionSegmentedControl_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -523,7 +619,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F84C1DE7F13E47E8F314A5CE /* Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig */;
+			baseConfigurationReference = AE773375C1AD31AF0D725F93 /* Pods-ATHMultiSelectionSegmentedControl_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -541,7 +637,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B5658542ECA984AAAED8BA8 /* Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig */;
+			baseConfigurationReference = 45A662688298A735AAE4EAA8 /* Pods-ATHMultiSelectionSegmentedControl_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
