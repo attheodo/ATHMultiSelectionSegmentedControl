@@ -12,6 +12,9 @@
 
 [![Demo](misc/demo.gif "ATHMultiSelectionSegmentedControl")](/)
 
+## Compatibility
+* Use `swift2.2` branch for Swift 2.2
+* Use `master` branch for Swift 3.0
 ## API
 ```swift
 import ATHMultiSelectionSegmentedControl
@@ -61,5 +64,9 @@ attheodo, at@atworks.gr
 ATHMultiSelectionSegmentedControl is available under the MIT license. See the LICENSE file for more info.
 
 ## Changelog
+- **v0.2.0**, *September 2016*
+    - Migration to Swift 3.0
+- **v0.1.1**, *July 2016*
+    - Bug fixes for tinting and button insertion
 - **v0.1.0**, *May 2016*
     - Initial release
