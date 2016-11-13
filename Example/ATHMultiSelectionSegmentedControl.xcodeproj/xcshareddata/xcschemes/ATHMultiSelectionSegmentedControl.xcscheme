@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D9937E11DD8996B00DAD213"
+               BlueprintIdentifier = "4D9938041DD8B44D00DAD213"
                BuildableName = "ATHMultiSelectionSegmentedControl.framework"
                BlueprintName = "ATHMultiSelectionSegmentedControl"
                ReferencedContainer = "container:ATHMultiSelectionSegmentedControl.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D9937E11DD8996B00DAD213"
+            BlueprintIdentifier = "4D9938041DD8B44D00DAD213"
             BuildableName = "ATHMultiSelectionSegmentedControl.framework"
             BlueprintName = "ATHMultiSelectionSegmentedControl"
             ReferencedContainer = "container:ATHMultiSelectionSegmentedControl.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D9937E11DD8996B00DAD213"
+            BlueprintIdentifier = "4D9938041DD8B44D00DAD213"
             BuildableName = "ATHMultiSelectionSegmentedControl.framework"
             BlueprintName = "ATHMultiSelectionSegmentedControl"
             ReferencedContainer = "container:ATHMultiSelectionSegmentedControl.xcodeproj">

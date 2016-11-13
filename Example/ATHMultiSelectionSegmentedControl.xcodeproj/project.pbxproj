@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		05DDF13078D347182654D5CF /* Pods_ATHMultiSelectionSegmentedControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D3F33D51F31B5559AD3E8 /* Pods_ATHMultiSelectionSegmentedControl_Example.framework */; };
 		4D796BD31D05E7E900CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796BD11D05E7DD00CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift */; };
+		4D9938091DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D9938071DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D9938111DD8B4F700DAD213 /* ATHMultiSelectionControlSegmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D99380F1DD8B4F700DAD213 /* ATHMultiSelectionControlSegmentButton.swift */; };
+		4D9938121DD8B4F700DAD213 /* ATHMultiSelectionSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9938101DD8B4F700DAD213 /* ATHMultiSelectionSegmentedControl.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -49,6 +52,11 @@
 		4D796BD11D05E7DD00CA0F00 /* ATHMultiSelectionSegmentedControlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATHMultiSelectionSegmentedControlTests.swift; sourceTree = "<group>"; };
 		4D9937E41DD8996B00DAD213 /* ATHMultiSelectionSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATHMultiSelectionSegmentedControl.h; sourceTree = "<group>"; };
 		4D9937E51DD8996B00DAD213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D9938051DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ATHMultiSelectionSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D9938071DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATHMultiSelectionSegmentedControl.h; sourceTree = "<group>"; };
+		4D9938081DD8B44D00DAD213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D99380F1DD8B4F700DAD213 /* ATHMultiSelectionControlSegmentButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATHMultiSelectionControlSegmentButton.swift; path = ../../ATHMultiSelectionSegmentedControl/Classes/ATHMultiSelectionControlSegmentButton.swift; sourceTree = "<group>"; };
+		4D9938101DD8B4F700DAD213 /* ATHMultiSelectionSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATHMultiSelectionSegmentedControl.swift; path = ../../ATHMultiSelectionSegmentedControl/Classes/ATHMultiSelectionSegmentedControl.swift; sourceTree = "<group>"; };
 		51E9094BB37854DB5D708176 /* Pods_ATHMultiSelectionSegmentedControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATHMultiSelectionSegmentedControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATHMultiSelectionSegmentedControl_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4D9938011DD8B44D00DAD213 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +108,17 @@
 			path = ATHMultiSelectionSegmentedControl;
 			sourceTree = "<group>";
 		};
+		4D9938061DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				4D9938071DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.h */,
+				4D99380F1DD8B4F700DAD213 /* ATHMultiSelectionControlSegmentButton.swift */,
+				4D9938101DD8B4F700DAD213 /* ATHMultiSelectionSegmentedControl.swift */,
+				4D9938081DD8B44D00DAD213 /* Info.plist */,
+			);
+			path = ATHMultiSelectionSegmentedControl;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +126,7 @@
 				607FACD21AFB9204008FA782 /* Example for ATHMultiSelectionSegmentedControl */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				4D9937E31DD8996B00DAD213 /* ATHMultiSelectionSegmentedControl */,
+				4D9938061DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl */,
 				607FACD11AFB9204008FA782 /* Products */,
 				DBD5C5C9C8DEA24A5CD05402 /* Pods */,
 				E91E566443CD3684B07E2953 /* Frameworks */,
@@ -111,6 +138,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Example.app */,
 				607FACE51AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Tests.xctest */,
+				4D9938051DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,7 +214,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4D9938021DD8B44D00DAD213 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D9938091DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4D9938041DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D99380A1DD8B44D00DAD213 /* Build configuration list for PBXNativeTarget "ATHMultiSelectionSegmentedControl" */;
+			buildPhases = (
+				4D9938001DD8B44D00DAD213 /* Sources */,
+				4D9938011DD8B44D00DAD213 /* Frameworks */,
+				4D9938021DD8B44D00DAD213 /* Headers */,
+				4D9938031DD8B44D00DAD213 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ATHMultiSelectionSegmentedControl;
+			productName = ATHMultiSelectionSegmentedControl;
+			productReference = 4D9938051DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		607FACCF1AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ATHMultiSelectionSegmentedControl_Example" */;
@@ -245,6 +302,12 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
+					4D9938041DD8B44D00DAD213 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = SEWZXLUE96;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0800;
@@ -271,11 +334,19 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Example */,
 				607FACE41AFB9204008FA782 /* ATHMultiSelectionSegmentedControl_Tests */,
+				4D9938041DD8B44D00DAD213 /* ATHMultiSelectionSegmentedControl */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4D9938031DD8B44D00DAD213 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,6 +550,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4D9938001DD8B44D00DAD213 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D9938111DD8B4F700DAD213 /* ATHMultiSelectionControlSegmentButton.swift in Sources */,
+				4D9938121DD8B4F700DAD213 /* ATHMultiSelectionSegmentedControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -526,6 +606,65 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4D99380B1DD8B44D00DAD213 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SEWZXLUE96;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ATHMultiSelectionSegmentedControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.attheodo.ATHMultiSelectionSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4D99380C1DD8B44D00DAD213 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SEWZXLUE96;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ATHMultiSelectionSegmentedControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.attheodo.ATHMultiSelectionSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -678,6 +817,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4D99380A1DD8B44D00DAD213 /* Build configuration list for PBXNativeTarget "ATHMultiSelectionSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D99380B1DD8B44D00DAD213 /* Debug */,
+				4D99380C1DD8B44D00DAD213 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "ATHMultiSelectionSegmentedControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
