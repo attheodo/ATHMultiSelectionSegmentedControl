@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ATHMultiSelectionSegmentedControl'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'A control mimicking UISegmentedControl behaviour but allowing for multiple segment selection'
 
   s.description      = <<-DESC
