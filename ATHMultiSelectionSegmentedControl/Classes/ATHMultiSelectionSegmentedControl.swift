@@ -416,6 +416,10 @@ open class MultiSelectionSegmentedControl: UIView {
         layer.masksToBounds = true
         layer.borderWidth = 1.0
         layer.borderColor = tintColor.cgColor
+
+        if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
+            _flipHorizontally()
+        }
     
     }
     
@@ -457,4 +461,22 @@ open class MultiSelectionSegmentedControl: UIView {
         }
         
     }
+    
+    /**
+     Flips (horizontally) the segmented control and all its component segments
+    */
+    fileprivate func _flipHorizontally() {
+        
+        guard let segments = _segmentButtons , segments.count > 0 else {
+            return
+        }
+        
+        self.transform = CGAffineTransform(scaleX: -1, y: 1)
+        
+        segments.forEach { segment in
+            segment.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
+        
+    }
+
 }
