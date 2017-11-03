@@ -40,6 +40,16 @@ open class MultiSelectionSegmentedControl: UIView {
         }
     }
     
+    open var font: UIFont = UIFont.systemFont(ofSize: 14) {
+        didSet {
+            if let segmentButtons = _segmentButtons {
+                for (index, button) in segmentButtons.enumerated() {
+                    button.titleLabel?.font = font
+                }
+            }
+        }
+    }
+    
     override open var tintColor: UIColor! {
         didSet {
             layer.borderColor = tintColor.cgColor
@@ -158,6 +168,7 @@ open class MultiSelectionSegmentedControl: UIView {
 
                 let button = ATHMultiSelectionControlSegmentButton(frame: buttonFrame)
 
+                button.titleLabel?.font = font
                 button.tintColor = tintColor
                 button.backgroundColor = backgroundColor
                 button.setButtonSelected(selectedSegmentIndices.contains(index))
