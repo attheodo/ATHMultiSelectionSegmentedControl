@@ -43,7 +43,7 @@ open class MultiSelectionSegmentedControl: UIView {
     open var font: UIFont = UIFont.systemFont(ofSize: 14) {
         didSet {
             if let segmentButtons = _segmentButtons {
-                for (index, button) in segmentButtons.enumerated() {
+                for (_, button) in segmentButtons.enumerated() {
                     button.titleLabel?.font = font
                 }
             }
