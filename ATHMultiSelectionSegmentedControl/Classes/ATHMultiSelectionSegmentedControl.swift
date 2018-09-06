@@ -325,6 +325,7 @@ open class MultiSelectionSegmentedControl: UIView {
         
         let button = ATHMultiSelectionControlSegmentButton(frame: CGRect(x: self.frame.width, y: 0, width: 0, height: self.frame.height))
        
+        button.titleLabel?.font = font
         button.tintColor = tintColor
         button.backgroundColor = backgroundColor
         button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), for: .touchUpInside)
