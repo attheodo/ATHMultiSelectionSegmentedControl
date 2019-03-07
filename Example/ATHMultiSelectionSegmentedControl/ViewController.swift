@@ -75,7 +75,7 @@ class ViewController: UIViewController, MultiSelectionSegmentedControlDelegate {
         }
         
         if indices.count != 0 {
-            selectedIndicesLabel.text = String(selectedIndicesLabel.text!.characters.dropLast())
+            selectedIndicesLabel.text!.removeLast()
         }
         
         selectedIndicesLabel.text?.append("]")
