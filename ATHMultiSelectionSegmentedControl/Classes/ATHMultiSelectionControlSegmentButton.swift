@@ -26,6 +26,8 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     internal var isButtonEnabled: Bool {
         return _isButtonEnabled
     }
+    /// The color of the text when selected
+    internal var titleColorSelected: UIColor?
     
     override var isHighlighted: Bool {
        
@@ -82,9 +84,9 @@ internal class ATHMultiSelectionControlSegmentButton: UIButton {
     */
     fileprivate func _setSelectedState() {
 
-        layer.borderColor = backgroundColor?.cgColor
+        layer.borderColor = self.titleColorSelected?.cgColor
         backgroundColor = tintColor
-        setTitleColor(UIColor.white, for: .normal)
+        setTitleColor(self.titleColorSelected ?? UIColor.white, for: .normal)
 
     }
     

@@ -171,6 +171,7 @@ open class MultiSelectionSegmentedControl: UIView {
                 button.titleLabel?.font = font
                 button.tintColor = tintColor
                 button.backgroundColor = backgroundColor
+                button.titleColorSelected = backgroundColor
                 button.setButtonSelected(selectedSegmentIndices.contains(index))
                 button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), for: .touchUpInside)
 
@@ -325,8 +326,10 @@ open class MultiSelectionSegmentedControl: UIView {
         
         let button = ATHMultiSelectionControlSegmentButton(frame: CGRect(x: self.frame.width, y: 0, width: 0, height: self.frame.height))
        
+        button.titleLabel?.font = font
         button.tintColor = tintColor
         button.backgroundColor = backgroundColor
+        button.titleColorSelected = backgroundColor
         button.addTarget(self, action: #selector(self._didTouchUpInsideSegment(_:)), for: .touchUpInside)
         
         button.setTitle(title, for: .normal)
