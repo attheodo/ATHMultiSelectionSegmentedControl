@@ -1,19 +1,23 @@
 PODS:
-  - ATHMultiSelectionSegmentedControl (0.2.0)
-  - Nimble (5.0.0)
+  - ATHMultiSelectionSegmentedControl (0.2.2)
+  - Nimble (8.0.0)
 
 DEPENDENCIES:
   - ATHMultiSelectionSegmentedControl (from `../`)
   - Nimble
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+
 EXTERNAL SOURCES:
   ATHMultiSelectionSegmentedControl:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  ATHMultiSelectionSegmentedControl: d3b8ec8b2b98d301f21eac4234d6a3a5d4752e1e
-  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  ATHMultiSelectionSegmentedControl: 8afa43fa84b791c4fdda009b91b6ca880f1abef2
+  Nimble: a0e6f95b4b91a4f66b6da3512b6bebc07c9cbf49
 
 PODFILE CHECKSUM: 0f726248125018a5fd94c733c65f88c765b5fa80
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.5.3
